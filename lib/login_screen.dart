@@ -1,3 +1,4 @@
+import 'package:car_zone/home_page.dart';
 import 'package:car_zone/sgin_in_screen.dart';
 import 'package:car_zone/google.dart';
 import 'package:car_zone/util.dart';
@@ -255,7 +256,9 @@ class _logincreenState extends State<logincreen> {
                           Container(
                               margin: EdgeInsets.symmetric(vertical: 4),
                               child: TextButton(onPressed: (){
-                             Navigator.pushNamed(context, SignInDemo.routeName);
+                                 Navigator.pushNamed(context, SignInDemo.routeName);
+
+
                               },
                                   child: Image.asset('assets/images/google.png'))),
                         ],
@@ -271,6 +274,7 @@ class _logincreenState extends State<logincreen> {
                             EdgeInsets.symmetric(horizontal: 34, vertical: 1),
                         child: ElevatedButton(
                           onPressed: () {
+                            Navigator.pushNamed(context, homepage.routeName) ;
                             if (formkey.currentState?.validate() == true) {
                               creataccountwithfirebaseauth();
                             }

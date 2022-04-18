@@ -1,3 +1,9 @@
+import 'package:car_zone/car_agencies.dart';
+import 'package:car_zone/car_service.dart';
+import 'package:car_zone/new_car.dart';
+import 'package:car_zone/old_car.dart';
+import 'package:car_zone/rescue_winch.dart';
+import 'package:car_zone/selling_car.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -24,20 +30,27 @@ class homepagewidget extends StatelessWidget{
                     Expanded(
                       flex: 4,
                       child:
-                      TextField(
-                        style:TextStyle(height:0),
-                        decoration: new InputDecoration(
-                          prefixIcon:(Icon(Icons.search)),
-                          enabledBorder: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                            borderSide: const BorderSide(
-                              color: Colors.grey,
+                      SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Column(
+                          children: [
+                            TextField(
+                              style:TextStyle(height:0),
+                              decoration: new InputDecoration(
+                                prefixIcon:(Icon(Icons.search)),
+                                enabledBorder: const OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                                  borderSide: const BorderSide(
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                  borderSide: BorderSide(color: Colors.grey),
+                                ),
+                              ),
                             ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
+                          ],
                         ),
                       ),
                     ),
@@ -53,203 +66,217 @@ class homepagewidget extends StatelessWidget{
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
 
-                child: Row(
+                child: SingleChildScrollView(
+                  child: Row(
 
-                  children: [
-                    TextButton(
+                    children: [
+                      TextButton(
 
-                      onPressed: (){},
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
-                                  ),
-                                  border: Border.all(color: Colors.black)),
-
-
-                                    child: Image.asset('assets/images/icon car service.png'))
-                              ],
-                            ),
-                            Container(
-
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                        onPressed: (){
+                          Navigator.pushNamed(context, carservice.routeName);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Row(
                                 children: [
-                                  Text('car''\n' 'service',textAlign: TextAlign.center,)
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    TextButton(
-
-                      onPressed: (){},
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
+                                  Container(
                                     padding: EdgeInsets.all(10),
                                     decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
                                     ),
-                                        border: Border.all(color: Colors.black)),
+                                    border: Border.all(color: Colors.black)),
 
 
-                                    child: Image.asset('assets/images/rescue winch.png'))
-                              ],
-                            ),
-                            Container(
-
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('rescue''\n' 'winch',textAlign: TextAlign.center,)
+                                      child: Image.asset('assets/images/icon car service.png'))
                                 ],
                               ),
-                            ),
-                          ],
+                              Container(
+
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('car''\n' 'service',textAlign: TextAlign.center,)
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
+                      TextButton(
 
-                      onPressed: (){},
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
-                                    ),
-                                        border: Border.all(color: Colors.black)),
-
-
-                                    child: Image.asset('assets/images/car agencies.png'))
-                              ],
-                            ),
-                            Container(
-
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                        onPressed: (){
+                      Navigator.pushNamed(context, winch.routeName);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Row(
                                 children: [
-                                  Text('car''\n' 'agencies',textAlign: TextAlign.center,)
+                                  Container(
+                                      padding: EdgeInsets.all(10),
+                                      decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
+                                      ),
+                                          border: Border.all(color: Colors.black)),
+
+
+                                      child: Image.asset('assets/images/rescue winch.png'))
                                 ],
                               ),
-                            ),
-                          ],
+                              Container(
+
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('rescue''\n' 'winch',textAlign: TextAlign.center,)
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
+                      TextButton(
 
-                      onPressed: (){},
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.all(8),
-                                    decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
-                                    ),
-                                        border: Border.all(color: Colors.black)),
-
-
-                                    child: Image.asset('assets/images/selling car.png'))
-                              ],
-                            ),
-                            Container(
-
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                        onPressed: (){
+                          Navigator.pushNamed(context, agencies.routeName);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Row(
                                 children: [
-                                  Text('selling''\n' 'car',textAlign: TextAlign.center,)
+                                  Container(
+                                      padding: EdgeInsets.all(10),
+                                      decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
+                                      ),
+                                          border: Border.all(color: Colors.black)),
+
+
+                                      child: Image.asset('assets/images/car agencies.png'))
                                 ],
                               ),
-                            ),
-                          ],
+                              Container(
+
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('car''\n' 'agencies',textAlign: TextAlign.center,)
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
+                      TextButton(
 
-                      onPressed: (){},
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
-                                    ),
-                                        border: Border.all(color: Colors.black)),
-
-
-                                    child: Image.asset('assets/images/new car.png'))
-                              ],
-                            ),
-                            Container(
-
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                        onPressed: (){
+                          Navigator.pushNamed(context, selling.routeName);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Row(
                                 children: [
-                                  Text('new''\n' 'car',textAlign: TextAlign.center,)
+                                  Container(
+                                      padding: EdgeInsets.all(8),
+                                      decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
+                                      ),
+                                          border: Border.all(color: Colors.black)),
+
+
+                                      child: Image.asset('assets/images/selling car.png'))
                                 ],
                               ),
-                            ),
-                          ],
+                              Container(
+
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('selling''\n' 'car',textAlign: TextAlign.center,)
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
+                      TextButton(
 
-                      onPressed: (){},
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
-                                    ),
-                                        border: Border.all(color: Colors.black)),
-
-
-                                    child: Image.asset('assets/images/old car.png'))
-                              ],
-                            ),
-                            Container(
-
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                        onPressed: (){
+                          Navigator.pushNamed(context, newcar.routeName);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Row(
                                 children: [
-                                  Text('old''\n' 'car',textAlign: TextAlign.center,)
+                                  Container(
+                                      padding: EdgeInsets.all(10),
+                                      decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
+                                      ),
+                                          border: Border.all(color: Colors.black)),
+
+
+                                      child: Image.asset('assets/images/new car.png'))
                                 ],
                               ),
-                            ),
-                          ],
+                              Container(
+
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('new''\n' 'car',textAlign: TextAlign.center,)
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
+                      TextButton(
 
-                  ],
+                        onPressed: (){
+                          Navigator.pushNamed(context, oldcar.routeName);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                      padding: EdgeInsets.all(10),
+                                      decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8),
+                                      ),
+                                          border: Border.all(color: Colors.black)),
+
+
+                                      child: Image.asset('assets/images/old car.png'))
+                                ],
+                              ),
+                              Container(
+
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('old''\n' 'car',textAlign: TextAlign.center,)
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
                 ),
               ),
             )),
@@ -312,7 +339,8 @@ class homepagewidget extends StatelessWidget{
                           ),
                         ],
                       ),
-                    ), Container(
+                    ),
+                    Container(
                       padding: EdgeInsets.all(12),
                       alignment: Alignment.topLeft,
                       child: Text("Top Rated",style: TextStyle(fontWeight: FontWeight.bold),

@@ -1,6 +1,7 @@
 
 
 import 'package:car_zone/home_page.dart';
+import 'package:car_zone/homepage-widget.dart';
 import 'package:car_zone/login_screen.dart';
 import 'package:car_zone/util.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -189,6 +190,7 @@ var formkey=GlobalKey<FormState>();
                         EdgeInsets.symmetric(horizontal: 34, vertical: 1),
                         child: ElevatedButton(
                           onPressed: () {
+                            Navigator.pushNamed(context, homepage.routeName) ;
                             if (formkey.currentState?.validate() == true) {
                               loginaccountwithfirebaseauth();
                             }
@@ -196,6 +198,7 @@ var formkey=GlobalKey<FormState>();
                           child: Text('LOG IN',
                               style: TextStyle(color: Colors.white)),
                           style: ButtonStyle(
+
                             backgroundColor: MaterialStateProperty.all(
                                 (Color.fromARGB(255, 6, 165, 244))),
                           ),
