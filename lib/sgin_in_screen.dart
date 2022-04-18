@@ -1,6 +1,7 @@
 
 
 import 'package:car_zone/home_page.dart';
+import 'package:car_zone/homepage-widget.dart';
 import 'package:car_zone/login_screen.dart';
 import 'package:car_zone/util.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,6 +17,8 @@ class sginin extends StatefulWidget{
 }
 
 class _sgininState extends State<sginin> {
+  final clicktextcontrol=TextEditingController();
+  var textcontrol=TextEditingController();
   String email='',password='';
 var formkey=GlobalKey<FormState>();
   @override
@@ -59,6 +62,7 @@ var formkey=GlobalKey<FormState>();
                   margin: EdgeInsets.symmetric(horizontal:45,vertical:8),
                   // padding: EdgeInsets.symmetric(vertical:6,horizontal:6 ),
                   child: TextFormField(
+                    controller: clicktextcontrol,
                     style:TextStyle(color:Colors.black,fontSize: 12),
                     decoration:InputDecoration(
                       hintText: 'please enter email',hintStyle:TextStyle(color:Color.fromARGB(
@@ -87,6 +91,9 @@ var formkey=GlobalKey<FormState>();
                   margin: EdgeInsets.symmetric(horizontal:45,vertical:8),
                   // padding: EdgeInsets.symmetric(vertical:6,horizontal:6 ),
                   child: TextFormField(
+                    controller: textcontrol,
+
+                    // controller: clicktextcontrol,
                     obscureText: true,
                     style:TextStyle(color:Colors.black,fontSize: 12),
                     decoration:InputDecoration(
@@ -189,6 +196,9 @@ var formkey=GlobalKey<FormState>();
                         EdgeInsets.symmetric(horizontal: 34, vertical: 1),
                         child: ElevatedButton(
                           onPressed: () {
+                            clicktextcontrol.clear();
+                            textcontrol.clear();
+                            Navigator.pushNamed(context, homepage.routeName) ;
                             if (formkey.currentState?.validate() == true) {
                               loginaccountwithfirebaseauth();
                             }
@@ -196,6 +206,7 @@ var formkey=GlobalKey<FormState>();
                           child: Text('LOG IN',
                               style: TextStyle(color: Colors.white)),
                           style: ButtonStyle(
+
                             backgroundColor: MaterialStateProperty.all(
                                 (Color.fromARGB(255, 6, 165, 244))),
                           ),

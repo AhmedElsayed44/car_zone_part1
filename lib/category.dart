@@ -153,15 +153,7 @@ class category extends StatelessWidget {
 
 
 
-                                    SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                        mainAxisAlignment:MainAxisAlignment.spaceAround,
-                                        children: [
-                                          ButtonText('Store'),
-                                        ],
-                                      ),
-                                    ),
+
                                     SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -216,15 +208,7 @@ class category extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                        mainAxisAlignment:MainAxisAlignment.spaceAround,
-                                        children: [
-                                          ButtonText('Price Movement'),
-                                        ],
-                                      ),
-                                    ),
+
                                   ],
                         ),
                               )
