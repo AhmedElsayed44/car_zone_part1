@@ -1,7 +1,6 @@
 
 import 'package:car_zone/car_agencies.dart';
 import 'package:car_zone/car_service.dart';
-import 'package:car_zone/service.dart';
 import 'package:car_zone/category.dart';
 import 'package:car_zone/home_page.dart';
 import 'package:car_zone/login_screen.dart';
@@ -14,7 +13,6 @@ import 'package:car_zone/google.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -26,8 +24,6 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return
       MaterialApp(
-
-        locale: Locale('ar'),
         debugShowCheckedModeBanner: false,
         title:'Car Zone',
        routes: {
@@ -36,7 +32,6 @@ class MyApp extends StatelessWidget{
          homepage.routeName:(buildcontext)=>homepage(),
          SignInDemo.routeName:(buildcontext)=>SignInDemo(),
          carservice.routeName:(buildcontext)=>carservice(),
-         service.routeName:(buildcontext)=>service(),
          winch.routeName:(buildcontext)=>winch(),
          agencies.routeName:(buildcontext)=>agencies(),
          selling.routeName:(buildcontext)=>selling(),

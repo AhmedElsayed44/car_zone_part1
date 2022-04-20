@@ -9,16 +9,11 @@ import 'package:flutter/material.dart';
 class logincreen extends StatefulWidget {
   static const String routeName = 'login';
 
-
   @override
   State<logincreen> createState() => _logincreenState();
 }
 
 class _logincreenState extends State<logincreen> {
-  final clicktextcontrol1=TextEditingController();
-  final clicktextcontrol2=TextEditingController();
-  final clicktextcontrol3=TextEditingController();
-  final clicktextcontrol4=TextEditingController();
   String fullname = '', email = '', password = '', confirmpassword = '';
 
   var formkey = GlobalKey<FormState>();
@@ -79,7 +74,6 @@ class _logincreenState extends State<logincreen> {
                   // padding: EdgeInsets.symmetric(vertical:6,horizontal:6 ),
 
                   child: TextFormField(
-                    controller: clicktextcontrol1,
                     style: TextStyle(color: Colors.black, fontSize: 12),
                     decoration: InputDecoration(
                       hintText: 'please enter full name',
@@ -111,7 +105,6 @@ class _logincreenState extends State<logincreen> {
                   margin: EdgeInsets.symmetric(horizontal: 45, vertical: 8),
                   // padding: EdgeInsets.symmetric(vertical:6,horizontal:6 ),
                   child: TextFormField(
-                    controller: clicktextcontrol2,
                     style: TextStyle(color: Colors.black, fontSize: 12),
                     decoration: InputDecoration(
                       hintText: 'please enter email',
@@ -147,7 +140,6 @@ class _logincreenState extends State<logincreen> {
                   margin: EdgeInsets.symmetric(horizontal: 45, vertical: 8),
                   // padding: EdgeInsets.symmetric(vertical:6,horizontal:6 ),
                   child: TextFormField(
-                    controller: clicktextcontrol3,
                     obscureText: true,
                     style: TextStyle(color: Colors.black, fontSize: 12),
                     decoration: InputDecoration(
@@ -183,7 +175,6 @@ class _logincreenState extends State<logincreen> {
                   margin: EdgeInsets.symmetric(horizontal: 45, vertical: 8),
                   // padding: EdgeInsets.symmetric(vertical:6,horizontal:6 ),
                   child: TextFormField(
-                    controller: clicktextcontrol4,
                     obscureText: true,
                     style: TextStyle(color: Colors.black, fontSize: 12),
                     decoration: InputDecoration(
@@ -283,10 +274,6 @@ class _logincreenState extends State<logincreen> {
                             EdgeInsets.symmetric(horizontal: 34, vertical: 1),
                         child: ElevatedButton(
                           onPressed: () {
-                            clicktextcontrol1.clear();
-                            clicktextcontrol2.clear();
-                            clicktextcontrol3.clear();
-                            clicktextcontrol4.clear();
                             Navigator.pushNamed(context, homepage.routeName) ;
                             if (formkey.currentState?.validate() == true) {
                               creataccountwithfirebaseauth();
