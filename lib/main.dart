@@ -36,9 +36,10 @@ class MyApp extends StatelessWidget{
          service.routeName:(buildcontext)=>service(),
          winch.routeName:(buildcontext)=>winch(),
          agencies.routeName:(buildcontext)=>agencies(),
-         selling.routeName:(buildcontext)=>selling(),
-         newcar.routeName:(buildcontext)=>newcar(),
+         selling_car.routeName:(buildcontext)=>selling_car(),
+
          oldcar.routeName:(buildcontext)=>oldcar(),
+         category.routeName:(buildcontext)=>category(),
 
 
 
