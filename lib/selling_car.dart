@@ -88,8 +88,15 @@ class _selling_carState extends State<selling_car> {
                       TextButton(onPressed: (){Navigator.pop(context);},
                         child: Icon(Icons.arrow_back,color:Colors.black,size:30,),),
 
-                      Image.asset('assets/images/logocaricon.png',width:174,height:51.5,),
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        child: Image.asset('assets/images/logocaricon.png',alignment:
+                          Alignment.topLeft, width:174,height:51.5,),
+                      ),
+
                     ],
+
 
                   ),
 
@@ -107,9 +114,8 @@ class _selling_carState extends State<selling_car> {
 
                     child: TextButton(
                       onPressed: (){},
-                        child: Icon(Icons.add,color:Colors.black,size:35,)),
-                  width:70 ,height:70,
-              )),
+                        child: Image.asset('assets/images/camera.png')
+              ))),
 
 
               Padding(

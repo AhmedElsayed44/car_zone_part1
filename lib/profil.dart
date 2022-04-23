@@ -9,7 +9,7 @@ class profil extends StatelessWidget{
 
 
     return Padding(
-    padding: const EdgeInsets.symmetric(vertical:15),
+    padding: const EdgeInsets.symmetric(vertical:22),
     child: Scaffold(
     backgroundColor:Color.fromRGBO(227, 227, 227, 1.0),
     body: SingleChildScrollView(
