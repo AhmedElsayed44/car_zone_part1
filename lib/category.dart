@@ -1,3 +1,4 @@
+import 'package:car_zone/BMW.dart';
 import 'package:car_zone/car_service.dart';
 import 'package:car_zone/category_button.dart';
 import 'package:car_zone/category_text.dart';
@@ -260,8 +261,12 @@ class category extends StatelessWidget {
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
                                         children: [
-                                          Buttons('assets/images/BMW.png'),
-                                          Buttons('assets/images/VOLKA.png'),
+                                          TextButton(
+                                              child: Image.asset('assets/images/BMW.png'),
+                                            onPressed: (){
+                                              Navigator.pushNamed(context, bmw.routeName);
+                                            },),
+                                          Buttons('assets/images/VOLKA.png',),
                                           Buttons('assets/images/MRCEDS.png'),
                                         ],
                                       ),
