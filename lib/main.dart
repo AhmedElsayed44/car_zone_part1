@@ -1,4 +1,5 @@
 
+import 'package:car_zone/BMW.dart';
 import 'package:car_zone/car_agencies.dart';
 import 'package:car_zone/car_service.dart';
 import 'package:car_zone/category.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget{
 
          oldcar.routeName:(buildcontext)=>oldcar(),
          category.routeName:(buildcontext)=>category(),
-
+         bmw.routeName:(buildcontext)=>bmw(),
 
 
 
