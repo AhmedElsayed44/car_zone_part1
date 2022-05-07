@@ -6,6 +6,7 @@ import 'package:car_zone/old_car.dart';
 import 'package:car_zone/selling_car.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class category extends StatelessWidget {
   static const String routeName='category';
@@ -75,6 +76,7 @@ class category extends StatelessWidget {
 
                               child:
                               SingleChildScrollView(
+                                scrollDirection: Axis.vertical,
                                 child: Column(
                                   crossAxisAlignment:CrossAxisAlignment.stretch,
 
@@ -247,63 +249,66 @@ class category extends StatelessWidget {
                         Expanded(
                           flex:2,
                           child: Container(
-                              child: Column(
-                              mainAxisSize:MainAxisSize.max,
-                                crossAxisAlignment:CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                     margin:EdgeInsets.all(25),
-                                    child:
-                                    Text('New Car',style:TextStyle(fontSize:16,fontWeight:FontWeight.bold))
-                                  ),
-                                  Container(
-                                    child: SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.vertical,
+                                child: Column(
+                                mainAxisSize:MainAxisSize.max,
+                                  crossAxisAlignment:CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                       margin:EdgeInsets.all(25),
+                                      child:
+                                      Text('New Car',style:TextStyle(fontSize:16,fontWeight:FontWeight.bold))
+                                    ),
+                                    Container(
+                                      child: SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          children: [
+                                            TextButton(
+                                                child: Image.asset('assets/images/BMW.png'),
+                                              onPressed: (){
+                                                Navigator.pushNamed(context, bmw.routeName);
+                                              },),
+                                            Buttons('assets/images/VOLKA.png',),
+                                            Buttons('assets/images/MRCEDS.png'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      child: SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                           children: [
+                                             Buttons('assets/images/HYUNDI.png'),
+                                             Buttons('assets/images/AUDI.png'),
+                                             Buttons('assets/images/Nissan.png'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      child: SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                           children: [
+                                             Buttons('assets/images/Proton.png'),
+                                             Buttons('assets/images/Seat.png'),
+                                             Buttons('assets/images/Toyota.png'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
                                       child: Row(
                                         children: [
-                                          TextButton(
-                                              child: Image.asset('assets/images/BMW.png'),
-                                            onPressed: (){
-                                              Navigator.pushNamed(context, bmw.routeName);
-                                            },),
-                                          Buttons('assets/images/VOLKA.png',),
-                                          Buttons('assets/images/MRCEDS.png'),
+                                          Buttons('assets/images/Subaru.png'),
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  Container(
-                                    child: SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                         children: [
-                                           Buttons('assets/images/HYUNDI.png'),
-                                           Buttons('assets/images/AUDI.png'),
-                                           Buttons('assets/images/Nissan.png'),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    child: SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                         children: [
-                                           Buttons('assets/images/Proton.png'),
-                                           Buttons('assets/images/Seat.png'),
-                                           Buttons('assets/images/Toyota.png'),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    child: Row(
-                                      children: [
-                                        Buttons('assets/images/Subaru.png'),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               )
                     ),
                   )

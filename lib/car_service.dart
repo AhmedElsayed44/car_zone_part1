@@ -78,6 +78,7 @@ class _car_serviceState extends State<car_service> {
 
                           child:
                           SingleChildScrollView(
+                            scrollDirection: Axis.vertical,
                             child: Column(
                               crossAxisAlignment:CrossAxisAlignment.stretch,
 
@@ -219,111 +220,114 @@ class _car_serviceState extends State<car_service> {
                     Expanded(
                       flex:2,
                       child: Container(
-                          child: Column(
-                            mainAxisSize:MainAxisSize.max,
-                            crossAxisAlignment:CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                  margin:EdgeInsets.all(25),
-                                  child:
-                                  Text('Car Service',style:TextStyle(fontSize:16,fontWeight:FontWeight.bold))
-                              ),
-                              Container(
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.vertical,
+                            child: Column(
+                              mainAxisSize:MainAxisSize.max,
+                              crossAxisAlignment:CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                    margin:EdgeInsets.all(25),
+                                    child:
+                                    Text('Car Service',style:TextStyle(fontSize:16,fontWeight:FontWeight.bold))
+                                ),
+                                Container(
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      children: [
+                                        TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
+                                            color:Colors.black12)),
+                                        TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
+                                            color:Colors.black12)),
+                                        TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
+                                            color:Colors.black12))
+                                      ],
+                                    ),
+                                  ),
+                                ),
+
+                                Container(
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      children: [
+                                        TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
+                                            color:Colors.black12)),
+                                        TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
+                                            color:Colors.black12)),
+                                        TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
+                                            color:Colors.black12))
+
+
+
+                                      ],
+                                    ),
+                                  ),
+                                ),
+
+                                Container(
                                   child: Row(
                                     children: [
                                       TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
-                                          color:Colors.black12)),
-                                      TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
-                                          color:Colors.black12)),
-                                      TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
-                                          color:Colors.black12))
-                                    ],
+                                          color:Colors.black12))                                  ],
                                   ),
                                 ),
-                              ),
 
-                              Container(
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    children: [
-                                      TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
-                                          color:Colors.black12)),
-                                      TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
-                                          color:Colors.black12)),
-                                      TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
-                                          color:Colors.black12))
+                                SizedBox(height:50),
 
+                                Container(
+                                  margin:EdgeInsets.symmetric(horizontal:15),
+                                  padding:EdgeInsets.symmetric(vertical:30),
+                                  width:double.infinity,
+                                  height:0.8,
+                                  color:Color.fromARGB(255, 150, 150, 150),
+                                ),
 
+                                Container(
+                                    margin:EdgeInsets.all(10),
+                                    child:
+                                    Text('My Car',style:TextStyle(fontSize:16,fontWeight:FontWeight.bold))
+                                ),
 
-                                    ],
+                                Container(
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      children: [
+                                        TextButton(onPressed:(){
+                                          Navigator.pushNamed(context,service.routeName);
+                                        },
+                                            child:Container(
+                                                child:Icon(Icons.add,color:Color.fromARGB(255, 0, 32, 74),size:35,),
+                                                width:70 ,height:70,
+
+                                                color:Colors.black12)),
+
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
 
-                              Container(
-                                child: Row(
-                                  children: [
-                                    TextButton(onPressed:(){},child:Container(  width:70 ,height:70,
-                                        color:Colors.black12))                                  ],
-                                ),
-                              ),
+                                Container(
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal:25),
+                                          child: Text('New',style:TextStyle(fontWeight:FontWeight.bold)),
+                                        ),
+                                        SizedBox(width: 10,),
 
-                              SizedBox(height:50),
-
-                              Container(
-                                margin:EdgeInsets.symmetric(horizontal:15),
-                                padding:EdgeInsets.symmetric(vertical:30),
-                                width:double.infinity,
-                                height:0.8,
-                                color:Color.fromARGB(255, 150, 150, 150),
-                              ),
-
-                              Container(
-                                  margin:EdgeInsets.all(10),
-                                  child:
-                                  Text('My Car',style:TextStyle(fontSize:16,fontWeight:FontWeight.bold))
-                              ),
-
-                              Container(
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    children: [
-                                      TextButton(onPressed:(){
-                                        Navigator.pushNamed(context,service.routeName);
-                                      },
-                                          child:Container(
-                                              child:Icon(Icons.add,color:Color.fromARGB(255, 0, 32, 74),size:35,),
-                                              width:70 ,height:70,
-
-                                              color:Colors.black12)),
-
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-
-                              Container(
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal:25),
-                                        child: Text('New',style:TextStyle(fontWeight:FontWeight.bold)),
-                                      ),
-                                      SizedBox(width: 10,),
-
-                                    ],
-                                  ),
-                                ),
-                              ),
 
 
-                            ],
+                              ],
+                            ),
                           )
                       ),
 
